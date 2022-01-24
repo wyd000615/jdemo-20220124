@@ -57,7 +57,63 @@
             <version>1.16.10</version>
             <scope>provided</scope>
         </dependency>
+        <!--mysql-start-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <!--        <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </dependency>
+
+                &lt;!&ndash;添加JDBC依赖&ndash;&gt;
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-jdbc</artifactId>
+                </dependency>-->
+        <!--mysql-end-->
+
     </dependencies>
+    <!--
+        <profiles>
+            <profile>
+                <id>dev</id>
+                <activation>
+                    <activeByDefault>true</activeByDefault>
+                </activation>
+                <build>
+                    <filters>
+                        <filter>src/main/resources/profile/dev.properties</filter>
+                    </filters>
+                </build>
+            </profile>
+            <profile>
+                <id>test</id>
+                <build>
+                    <filters>
+                        <filter>src/main/resources/profile/test.properties</filter>
+                    </filters>
+                </build>
+            </profile>
+        </profiles>
+    -->
+
 
     <build>
         <plugins>
@@ -67,5 +123,41 @@
             </plugin>
         </plugins>
     </build>
+    <!--    <build>
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                    <filtering>true</filtering>
+                </resource>
+            </resources>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                &lt;!&ndash;maven profile打包&ndash;&gt;
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <useDefaultDelimiters>true</useDefaultDelimiters>
+                    </configuration>
+                </plugin>
+
+                &lt;!&ndash;打包排除部分文件&ndash;&gt;
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <excludes>
+                            <exclude>**/profile/*</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>-->
 
 </project>
